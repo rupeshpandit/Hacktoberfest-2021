@@ -20,9 +20,9 @@ int main()
 
     bmi=(w/sm);
 
-    if(bmi>30)
+    if(bmi>24.9)
         score="overweight, you should consider changing your diet";
-    else if(bmi>18.5 && bmi<24.9)
+    else if(bmi>18.5 && bmi<=24.9)
         score="optimal, your diet is good";
     else
         score="underweight, you should consider changing your diet";

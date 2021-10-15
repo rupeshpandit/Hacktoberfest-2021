@@ -1,26 +1,9 @@
-#include<iostream>
-using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int checkArray[n];
-    for(int k=0;k<n;k++){
-        checkArray[k]=0;
+int n;
+vector<bool> is_prime(n+1, true);
+is_prime[0] = is_prime[1] = false;
+for (int i = 2; i <= n; i++) {
+    if (is_prime[i] && (long long)i * i <= n) {
+        for (int j = i * i; j <= n; j += i)
+            is_prime[j] = false;
     }
-    int i=2;
-    while(i*i<n&&checkArray[i]==0){
-        for(int j=i*i;j<n;j++){
-            if(j%i==0){
-                checkArray[j]=1;
-            }
-            else checkArray[j]=0;
-        }
-        i++;
-    }
-    for(int k=0;k<n;k++){
-        if(checkArray[k]==0){
-            cout<<k<<endl;
-        }
-    }
-    return 0;
 }

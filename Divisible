@@ -1,0 +1,43 @@
+Problem
+You are given an array  of size  that contains integers. Here,  is an even number. You are required to perform the following operations:
+
+Divide the array of numbers in two equal halves
+Note: Here, two equal parts of a test case are created by dividing the array into two equal parts.
+Take the first digit of the numbers that are available in the first half of the array (first 50% of the test case)
+Take the last digit of the numbers that are available in the second half of the array (second 50% of the test case)
+Generate a number by using the digits that have been selected in the above steps
+Your task is to determine whether the newly-generated number is divisible by .
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    int N,num;
+    cin >> N;
+    long int a,odd=0,even=0,sum;
+    for(int i_A=1; i_A<=N; i_A++)
+    {
+        int r=0;
+    	cin >> a;
+    	if(i_A<=N/2)
+    	{
+    	    while(a>0)
+    	    {
+    	        r=a%10;
+    	        a=a/10;
+    	    }
+    	}
+    	else
+    	r=a%10;
+    	if(i_A%2==0)
+    	 even=even+r;
+    	 else
+    	 odd=odd+r;
+    	 sum=abs(odd-even);
+    }
+    if(sum%11==0||sum==0)
+    cout<<"OUI";
+    else
+    cout<<"NON";
+    
+ 
+}
